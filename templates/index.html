@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WHISTLE-KE</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Report corruption anonymously in Kenya. WhistleKE empowers citizens to take action for a transparent future.">
+<meta name="keywords" content="corruption, anonymous report, Kenya, whistleblower, WhistleKE">
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Your voice against corruption</h1>
+								<p>Corruption thrives in silence - Break the silence, help build a transparent Kenya.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Why WhistleKE?</a></li>
+								<li><a href="#work">Join the movement</a></li>
+								<li><a href="#about">Anonymous Chat Support</a></li>
+								<li><a href="#contact">Report</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Tired of 'kitu kidogo'?</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/anti-corruption.png') }}" alt="Image 1" /></span>
+								<p>Corruption undermines justice, stifles development, and steals opportunities from ordinary Kenyans. Every time someone demands a bribe, diverts public funds or abuses power, it hurts our communities.</p>
+								<p>By reporting corruption through <b>Whistle KE</b> you become part of the solution - safely and anonymously. Together, we can expose wrongdoing, hold the powerful accountable, and build a transparent Kenya.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">#WhistleKEWednesday</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/chain.png') }}" alt="Image 2" /></span>
+								<p>Every report matters - but real change happens when we act together.Your anonymous report isn't just a complaint; it's evidence that fuels investigations, exposes the corrupt, and pushes for systemic change. </p>
+								<p>Every bribe paid, every job stolen, and every service denied because of graft hurts real people. Your voice is power. <b>#WhistleKEWednesday</b></p>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">Need help? Chat Anonymously</h2>
+								<span class="image main"><img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="Image 3" /></span>
+								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">REPORT</h2>
+								<form method="POST" action="{{ url_for('report') }}" enctype="multipart/form-data">
+									<div class="fields">
+										<div class="field half">
+											<label for="type">Type of Corruption</label>
+											<input type="text" name="type" id="type" placeholder="Illegal work conditions, unfair hiring.." />
+										</div>
+										<div class="field half">
+											<label for="location">Location</label>
+											<input type="text" name="location" id="location" placeholder="e.g. Nairobi, Mombasa etc." />
+										</div>
+										
+										<div class="field">
+											<label for="message">Description</label>
+											<textarea name="message" id="message" rows="4" placeholder="Describe the incident in detail. Include names,dates, locations and any witnesses."></textarea>
+										</div>
+
+										<div class="field">
+											<label for="evidence">Upload Evidence (Optional)</label>
+											<div class="upload-box">
+											  <input 
+												type="file" 
+												id="evidence" 
+												name="evidence" 
+												accept="image/*,.pdf,.doc,.docx" 
+												multiple
+												aria-label="Upload photos or documents"
+											  >
+											  <div class="upload-prompt">
+												<img src="{{ url_for('static', filename='images/upload.png') }}"alt="Upload" width="40">
+												<p><strong>Drag & drop files or click to browse</strong></p>
+												<small>Supports: JPG, PNG, PDF (max 5MB each)</small>
+											  </div>
+											  <div class="file-preview" id="file-preview"></div>
+											</div>
+										  </div>
+
+
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+
+								</form>
+								
+							</article>
+
+						
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<h3>WhistleKE</h3>
+					<p>Your anonymous platform to report corruption in Kenya.</p>
+				</footer>	
+
+			</div>
+
+		<!-- BG -->
+		
+		<div id="bg"></div>	
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/utils.js' )}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js' )}}"></script>
+
+	</body>
+</html>
